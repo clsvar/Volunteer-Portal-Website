@@ -20,7 +20,7 @@ Important Note: If you are going to use superbly for production, please refer to
 During a crisis, we need volunteers who selflessly serve other people in need. Volunteers are the backbone in helping the community ease the burden and recover faster. That is why we created this portal. This volunteer portal will help and improve the efficiency of finding volunteers who are available and notifying them through email. By using email, volunteers will never miss an important task, and as easy as clicking a button.
 
 ## What is the Volunteer Portal?
-It is a web-based, open-source, Django (Python) application that keeps a list of available volunteers, active or inactive, and assigns tasks to each of them. This tool is for coordinators who manage volunteers in any size. You can also create as many campaigns as you like. You can find the source code on Github and can easily deploy it on your own server.
+It is a web-based, open-source, Django (Python) application that keeps a list of available volunteers, active or inactive, and assigns tasks to each of them. This tool is for coordinators who manage volunteers in any size. You can also create as many campaigns as you like. You can find the source code on Github and can easily deploy it on your own server: [Github Public Repository](https://github.com/clsvar/Volunteer-Portal-Website "Volunteer Portal Website")
 
 ## How?
 Campaigns are specific crises or causes to which volunteers join:
