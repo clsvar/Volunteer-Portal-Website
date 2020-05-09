@@ -42,6 +42,6 @@ class HomePageView(View):
             campaign.save()
             return redirect("campaign_home")
         else:
-            template_name = "campaign_home"
+            template_name = "campaign_home.html"
             data = {'form': form}
             return render(request, template_name, data)

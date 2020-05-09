@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Home: {{ user.username }}
+{% endblock %}
+
+{% block content %}
+    <h2 class="text-primary">Welcome, {{ user.username }}</h2>
+    <div class="row">
+        <div class="col-md-8">
+            <h3>Delete Account</h3>
+            <form id="delete-account-form" class="form-delete-account" action="{% url 'delete_account' %}" method="post" enctype="multipart/form-data" autocomplete="off">
+                {% csrf_token %}
+                <p><b>Warning!: </b>This will delete your account and all your campaign, tasks, etc.</p>
+                <p><b>User Account: </b>{{ user_account }}</p>
+                <p>Are you sure you want to delete your account? </p>
+
+                <a href="{% url 'settings_home' %}">Cancel</a> &nbsp;&nbsp;<button type="submit">Delete Account</button>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

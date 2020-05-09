@@ -6,5 +6,5 @@ from django.contrib.auth.models import User
 # Create your models here.
 class Campaign(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE,)
-    name = models.CharField("Campaign Name", max_length=50, unique=True)
+    name = models.CharField("Campaign Name", max_length=50)
     date_created = models.DateTimeField("date created", auto_now=True)
