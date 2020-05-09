@@ -14,7 +14,7 @@ After installing the required modules, go to the command prompt and type: $pytho
 
 Well Done!
 
-Important Note: If you are going to use superbly for production, please refer to this Django link: [Django Deployment Checklist](https://docs.djangoproject.com/en/3.0/howto/deployment/checklist "Django Deployment Checklist")
+Important Note: If you are going to use this website for production, please refer to this Django link: [Django Deployment Checklist](https://docs.djangoproject.com/en/3.0/howto/deployment/checklist "Django Deployment Checklist")
 
 ## Why?
 During a crisis, we need volunteers who selflessly serve other people in need. Volunteers are the backbone in helping the community ease the burden and recover faster. That is why we created this portal. This volunteer portal will help and improve the efficiency of finding volunteers who are available and notifying them through email. By using email, volunteers will never miss an important task, and as easy as clicking a button.
