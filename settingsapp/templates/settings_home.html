@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Home: {{ user.username }}
+{% endblock %}
+
+{% block content %}
+    <h2 class="text-primary">Welcome, {{ user.username }}</h2>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h3>Settings</h3>
+            <h4><a href="{% url 'send_mail_setup' %}">Send Mail Setup</a></h4>
+        </div>
+
+        <div class="col-md-8">
+            <h3>More Settings</h3>
+        </div>
+
+    </div>
+
+{% endblock %}

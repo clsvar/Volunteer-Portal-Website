@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Home: {{ user.username }}
+{% endblock %}
+
+{% block content %}
+    <h2 class="text-primary">Welcome, {{ user.username }}</h2>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h3>Create Campaign</h3>
+            <form id="campaign-form" class="form-campaign" action="{% url 'campaign_home' %}" method="post" enctype="multipart/form-data" autocomplete="off">
+                {% csrf_token %}
+                {{ form }}
+                <button type="submit">Create Campaign</button>
+            </form>
+        </div>
+
+        <div class="col-md-8">
+            <h3>Campaign List</h3>
+            <ul>
+            {% for campaign in campaign_list%}
+                  <li><div>Name: {{ campaign.name }}, Date Created: {{ campaign.date_created }} <a href="#" onclick="Confirmation_dialog()">Delete</a> | <a href="{% url 'volunteer_home' campaign.id %}">View</a></div></li>
+                  <script>
+                    function Confirmation_dialog(){
+                      var r = confirm("Delete Campaign?");
+                      if (r == true) {
+                        window.location.href = '/home/campaign_delete/' + {{ campaign.id }};
+                      } else {
+                        window.location.href = '/home/campaign';
+                      }
+                    }
+                  </script>
+            {% endfor %}
+            </ul>
+        </div>
+
+    </div>
+
+{% endblock %}

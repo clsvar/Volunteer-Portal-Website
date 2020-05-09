@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Home: {{ user.username }}
+{% endblock %}
+
+{% block content %}
+    <h2 class="text-primary">Welcome, {{ user.username }}</h2>
+    <h3>Campaign: {{ campaign.name }}</h3>
+
+    <h4><a href="{% url 'task_home' campaign.id volunteer %}">Back to Task Page</a></h4>
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Task</h3>
+            <form id="task-form" class="form-task" action="{% url 'verify_email' campaign.id volunteer %}" method="post" enctype="multipart/form-data" autocomplete="off">
+              {% csrf_token %}
+              {{ form.as_p }}
+              <button type="submit">Verify Email</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+          <br/><br/>
+          <h5>Help</h5>
+          <p>In order to send mail to volunteers, you have to create a new Gmail account for this specific purpose.</p>
+          <p>Create a new Gmail account as you normally would.</p>
+          <ol>
+          <li>Go to this page and unlock captcha, <a href="http://www.google.com/accounts/DisplayUnlockCaptcha">http://www.google.com/accounts/DisplayUnlockCaptcha</a>.</li>
+          <li>Set it to allow less secure apps access and wait for an email to arrive confirming it at your newly created Gmail account. <b>Note:</b> When you turn on the slider, you must go back one page for it to activate.</li>
+          <li>Disable 2-Step Verification.</li>
+          </ol>
+          <p>After creating an email account, go to Settings and Send Mail Set-up, type in your email address, and password on the space provided. Then, save settings.</p>
+
+          <p>To verify email, you just use your newly created Gmail account by entering your email address and password.</p>
+
+          <h5>Troubleshooting</h5>
+
+          <p><b>Issue:</b> It always says, "Error." </p>
+
+          <p><b>Solution:</b> You must have typed your email address or password incorrectly. Also, check your email address and password in Send Mail Setup in the Settings menu.</p>
+
+          <p><b>Issue:</b> Still having error sending notification.</p>
+
+          <p><b>Solution:</b> Refresh the page, or edit the task and untick notified and save it. Then, verify the email again.</p>
+
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Home: {{ user.username }}
+{% endblock %}
+
+{% block content %}
+    <h2 class="text-primary">Welcome, {{ user.username }}</h2>
+    <h3>Campaign: {{ campaign.name }}</h3>
+    <h4><a class="btn btn-primary" href="{% url 'add_volunteer' campaign.id %}">Add Volunteer</a></h4>
+
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Active Volunteers</h3>
+            <ul>
+            {% for volunteer in volunteers %}
+              {% if volunteer.status == 'U' %}
+                <li><div>{{ volunteer.volunteer }} | {{ volunteer.email }} | {{ volunteer.status }} | <a href="/home/volunteer/edit/{{ campaign.id }}/{{ volunteer.volunteer }}">Edit</a> | <a href="/home/task/{{ campaign.id }}/{{ volunteer.volunteer }}">View Task</a></div></li>
+              {% endif %}
+            {% endfor %}
+            </ul>
+        </div>
+
+        <div class="col-md-6">
+            <h3>Available Volunteers</h3>
+            <ul>
+            {% for volunteer in volunteers %}
+              {% if volunteer.status == 'A' %}
+                <li><div>{{ volunteer.volunteer }} | {{ volunteer.email }} | {{ volunteer.status }} | <a href="/home/volunteer/edit/{{ campaign.id }}/{{ volunteer.volunteer }}">Edit</a> | <a href="/home/task/{{ campaign.id }}/{{ volunteer.volunteer }}">View Task</a> | <a href="/home/confirmed/{{ campaign.id }}/{{ volunteer.volunteer }}">Confirmed</a></div></li>
+              {% endif %}
+            {% endfor %}
+            </ul>
+        </div>
+
+        <div class="col-md-6">
+            <h3>Busy Volunteers</h3>
+            <ul>
+            {% for volunteer in volunteers %}
+              {% if volunteer.status == 'B' %}
+                <li><div>{{ volunteer.volunteer }} | {{ volunteer.email }} | {{ volunteer.status }} | <a href="/home/volunteer/edit/{{ campaign.id }}/{{ volunteer.volunteer }}">Edit</a></div></li>
+              {% endif %}
+            {% endfor %}
+            </ul>
+        </div>
+
+
+        <div class="col-md-6">
+            <h3>Inactive Volunteers</h3>
+            <ul>
+            {% for volunteer in volunteers %}
+              {% if volunteer.status == 'I' %}
+                <li><div>{{ volunteer.volunteer }} | {{ volunteer.email }} | {{ volunteer.status }} | <a href="/home/volunteer/edit/{{ campaign.id }}/{{ volunteer.volunteer }}">Edit</a></div></li>
+              {% endif %}
+            {% endfor %}
+            </ul>
+        </div>
+
+    </div>
+
+{% endblock %}

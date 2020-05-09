@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Home: {{ user.username }}
+{% endblock %}
+
+{% block content %}
+    <h2 class="text-primary">Welcome, {{ user.username }}</h2>
+    <h3>Campaign: {{ campaign.name }}</h3>
+    <h3>Volunteer ID: {{ volunteer }}</h3>
+    <h4><a href="{% url 'task_home' campaign.id volunteer %}">Back to Task Page</a></h4>
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Task</h3>
+            <form id="task_add-form" class="form-task_add" action="{% url 'task_add' campaign.id volunteer tasks.id %}" method="post" enctype="multipart/form-data" autocomplete="off">
+              {% csrf_token %}
+              Task ID: <input type="text" name="user" value="{{ tasks.id }}" readonly><br/>
+              Cmapaign ID: <input type="text" name="campaign" value="{{ campaign.id }}" readonly><br/>
+              Volunteer ID: <input type="text" name="volunteer" value="{{ volID }}" readonly><br/>
+              Task Name: <input type="text" name="task_name" value="{{ tasks.task_name }}" readonly><br/>
+              Task Date: <input type="text" name="date" value="{{ tasks.date }}" readonly><br/>
+              Task Time: <input type="text" name="time" value="{{ tasks.time }}" readonly><br/>
+              Address Number: <input type="text" name="number" value="{{ tasks.number }}" readonly><br/>
+              Address 1: <input type="text" name="address_1" value="{{ tasks.address_1 }}" readonly><br/>
+              Address 2: <input type="text" name="address_2" value="{{ tasks.address_2 }}" readonly><br/>
+              City: <input type="text" name="city" value="{{ tasks.city }}" readonly><br/>
+              Zip Code: <input type="text" name="zip_code" value="{{ tasks.zip_code }}" readonly><br/>
+              Country: <input type="text" name="country" value="{{ tasks.country }}" readonly><br/>
+              Family Name: <input type="text" name="family_name" value="{{ tasks.family_name }}" readonly><br/>
+              Date Created: <input type="text" name="date_created" value="{{ tasks.date_created }}" readonly><br/>
+              <button type="submit">Add Task</button>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

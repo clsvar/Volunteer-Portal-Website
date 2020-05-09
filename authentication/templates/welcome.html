@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}
+Volunteer Portal
+{% endblock %}
+
+{% block content %}
+    <h2 class="text-primary">Welcome to Volunteer Portal!</h2>
+
+    <div class="row">
+        <div class="col-md-8">
+          <p><b><h5>Why?</h5></b> During a crisis, we need volunteers who selflessly serve other people in need. Volunteers are the backbone in helping the community ease the burden and recover faster. That is why we created this portal. This volunteer portal will help and improve the efficiency of finding volunteers who are available and notifying them through email. By using email, volunteers will never miss an important task, and as easy as clicking a button.</p>
+
+          <p><b><h5>What is the Volunteer Portal?</h5></b> It is a web-based, open-source, Django (Python) application that keeps a list of available volunteers, active or inactive, and assigns tasks to each of them. This tool is for coordinators who manage volunteers in any size. You can also create as many campaigns as you like. You can find the source code on Github and can easily deploy it on your own server.</p>
+
+          <p><b><h5>How?</h5></b> Campaigns are specific crises or causes to which volunteers join:</p>
+          <ul>
+          <li>Create a name for the campaign and click view.</li>
+          <li>Add volunteer details.</li>
+          <li>Add tasks and assign these tasks to volunteers. </li>
+          <li>Afterward, you notify these volunteers through email and ask for confirmation.</li>
+          <p><b>Note:</b> You must set up your email first before you can send emails in the Settings menu. For more information, click Help on the menu.</p>
+          <li>Check email for replies and click the confirmed tasks to volunteers.  So, it will be easy to monitor volunteers who are actively participating.</li>
+          <li>After the task gets completed, you can safely delete it.</li>
+          </ul>
+          <b><h5>Privacy</h5></b>
+          	<p>We made sure that even in a breach, no personal details are kept. Please tell the volunteers to create a unique email account in Gmail specific only for this purpose. Do not let them use their personal email accounts. Do not put the full names of recipients to avoid linking them to their physical addresses. If you want to have the full details of volunteers,  create a spreadsheet locally on your computer with their personal info. We do not want you to store it in the portal to maintain privacy. Of course, we do not sell, view, or use the data stored in the database. Data stored is yours only.</p>
+
+          <b><h5>Feedback</h5></b>
+          	<p>We would really appreciate sending your comments, ideas, and feedback through our email: <a href="mailto:clsvar.github@gmail.com?subject=feedback">clsvar.github@gmail.com</a></p>
+
+          <b><h5>Thank You!</h5></b>
+
+
+        </div>
+
+    </div>
+
+{% endblock %}
