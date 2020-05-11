@@ -1,5 +1,5 @@
 # Volunteer-Portal-Website
-A Django website that stores, manage, and tracks volunteers with any given tasks, and sends email notifications for confirmation.
+A Django website that stores, manages, and tracks volunteers with any given tasks, and sends email notifications for confirmation.
 
 To install:
 
@@ -10,7 +10,10 @@ Next, go to the folder where you extracted the zip file. Then, install these req
 Python (3.7.4 or later)
 Django (3.0.5 or later)
 
-After installing the required modules, go to the command prompt and type: $python manage.py makemigrations. Then, $python manage.py migrate to create the database. To run the website type: $python manage.py runserver. It will tell you to open your web browser and type: '127.0.0.1:8000' in the address bar and load it. You will see the Welcome Page, signup, and log in.
+After installing the required modules, go to the command prompt and type: $python manage.py makemigrations.
+Then, $python manage.py migrate to create the database.
+To run the website type: $python manage.py runserver.
+It will tell you to open your web browser and type: '127.0.0.1:8000' in the address bar and load it. You will see the Welcome Page, signup, and log in.
 
 Well Done!
 
@@ -36,6 +39,6 @@ Check email for replies and click the confirmed tasks to volunteers.  So, it wil
 We made sure that even in a breach, no personal details are kept. Please tell the volunteers to create a unique email account in Gmail specific only for this purpose. Do not let them use their personal email accounts. Do not put the full names of recipients to avoid linking them to their physical addresses. If you want to have the full details of volunteers,  create a spreadsheet locally on your computer with their personal info. We do not want you to store it in the portal to maintain privacy. Of course, we do not sell, view, or use the data stored in the database. Data stored is yours only.
 
 ## Feedback
-We would really appreciate sending your comments, ideas, and feedback through our email:  [clsvar.github@gmail.com](mailto:clsvar.github@gmail.com) 
+We would really appreciate sending your comments, ideas, and feedback through our email:  [clsvar.github@gmail.com](mailto:clsvar.github@gmail.com)
 
 ## Thank You!
