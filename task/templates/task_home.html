@@ -8,7 +8,7 @@
     <h2 class="text-primary">Welcome, {{ user.username }}</h2>
     <h3>Campaign: {{ campaign.name }}</h3>
     <h3>Volunteer ID: {{ volunteer.volunteer }}</h3>
-    <h4><a class="btn btn-primary" href="{% url 'add_task' campaign.id volunteer.volunteer %}">Add Task</a></h4>
+    <h4><a class="btn btn-primary" href="{% url 'add_task' campaign.id volunteer.volunteer volunteer.id %}">Add Task</a></h4>
     <h4><a href="{% url 'volunteer_home' campaign.id %}">Back to Volunteer Page</a></h4>
     <div class="row">
 
@@ -17,7 +17,7 @@
           <ul>
           {% for task in my_tasks %}
             {% if verified == True %}
-              <li><div>{{ task.task_name }} | {{ task.date }} | {{ task.time }} | {{ task.number }} | {{ task.address_1 }} | {{ task.address_2 }} | {{ task.city }} | {{ task.zip_code }} | {{ task.country }} | {{ task.family_name }} | <a href="/home/task_edit/{{ campaign.id }}/{{ volunteer.volunteer }}/{{ task.id }}">Edit</a> | <a href="/home/task_delete/{{ campaign.id }}/{{ volunteer.volunteer }}/{{ task.id }}">Delete</a> |
+              <li><div>{{ task.task_name }} | {{ task.date }} | {{ task.time }} | {{ task.number }} | {{ task.address_1 }} | {{ task.address_2 }} | {{ task.city }} | {{ task.zip_code }} | {{ task.country }} | {{ task.family_name }} | <a href="/home/task_edit/{{ campaign.id }}/{{ volunteer.volunteer }}/{{volunteer.id}}/{{ task.id }}">Edit</a> | <a href="/home/task_delete/{{ campaign.id }}/{{ volunteer.volunteer }}/{{ volunteer.id }}/{{ task.id }}">Delete</a> |
                 <button id="notify-{{task.id}}" data-id="{{task.id}}"
                   class="btn btn-mini btn-danger glyphicon glyphicon-heart"
                   type="button">
@@ -34,9 +34,9 @@
               </li>
             {% else %}
               {% if task.notified == True %}
-                <li><div>{{ task.task_name }} | {{ task.date }} | {{ task.time }} | {{ task.number }} | {{ task.address_1 }} | {{ task.address_2 }} | {{ task.city }} | {{ task.zip_code }} | {{ task.country }} | {{ task.family_name }} | <a href="/home/task_edit/{{ campaign.id }}/{{ volunteer.volunteer }}/{{ task.id }}">Edit</a> | <a href="/home/task_delete/{{ campaign.id }}/{{ volunteer.volunteer }}/{{ task.id }}">Delete</a> | <a href="/home/verify_email/{{ campaign.id }}/{{ volunteer.volunteer }}">Verify Email</a> | Notified</div></li>
+                <li><div>{{ task.task_name }} | {{ task.date }} | {{ task.time }} | {{ task.number }} | {{ task.address_1 }} | {{ task.address_2 }} | {{ task.city }} | {{ task.zip_code }} | {{ task.country }} | {{ task.family_name }} | <a href="/home/task_edit/{{ campaign.id }}/{{ volunteer.volunteer }}/{{volunteer.id}}/{{ task.id }}">Edit</a> | <a href="/home/task_delete/{{ campaign.id }}/{{ volunteer.volunteer }}/{{ volunteer.id }}/{{ task.id }}">Delete</a> | <a href="/home/verify_email/{{ campaign.id }}/{{ volunteer.volunteer }}/{{ volunteer.id }}">Verify Email</a> | Notified</div></li>
               {% else %}
-                <li><div>{{ task.task_name }} | {{ task.date }} | {{ task.time }} | {{ task.number }} | {{ task.address_1 }} | {{ task.address_2 }} | {{ task.city }} | {{ task.zip_code }} | {{ task.country }} | {{ task.family_name }} | <a href="/home/task_edit/{{ campaign.id }}/{{ volunteer.volunteer }}/{{ task.id }}">Edit</a> | <a href="/home/task_delete/{{ campaign.id }}/{{ volunteer.volunteer }}/{{ task.id }}">Delete</a> | <a href="/home/verify_email/{{ campaign.id }}/{{ volunteer.volunteer }}">Verify Email</a></div></li>
+                <li><div>{{ task.task_name }} | {{ task.date }} | {{ task.time }} | {{ task.number }} | {{ task.address_1 }} | {{ task.address_2 }} | {{ task.city }} | {{ task.zip_code }} | {{ task.country }} | {{ task.family_name }} | <a href="/home/task_edit/{{ campaign.id }}/{{ volunteer.volunteer }}/{{volunteer.id}}/{{ task.id }}">Edit</a> | <a href="/home/task_delete/{{ campaign.id }}/{{ volunteer.volunteer }}/{{ volunteer.id }}/{{ task.id }}">Delete</a> | <a href="/home/verify_email/{{ campaign.id }}/{{ volunteer.volunteer }}/{{ volunteer.id }}">Verify Email</a></div></li>
               {% endif %}
             {% endif %}
             <script>
@@ -66,7 +66,7 @@
             {% for task in tasks %}
               {% for volunteer_id in volunteers %}
                 {% if task.volunteer_id == volunteer_id.id %}
-                <li><div>{{ volunteer_id.volunteer }} | {{ task.task_name }} | {{ task.date }} | {{ task.time }} | {{ task.number }} | {{ task.address_1 }} | {{ task.address_2 }} | {{ task.city }} | {{ task.zip_code }} | {{ task.country }} | {{ task.family_name }} | <a href="/home/task_add/{{ campaign.id }}/{{ volunteer.volunteer }}/{{ task.id }}">Add</a></div></li>
+                <li><div>{{ volunteer_id.volunteer }} | {{ task.task_name }} | {{ task.date }} | {{ task.time }} | {{ task.number }} | {{ task.address_1 }} | {{ task.address_2 }} | {{ task.city }} | {{ task.zip_code }} | {{ task.country }} | {{ task.family_name }} | <a href="/home/task_add/{{ campaign.id }}/{{ volunteer.volunteer }}/{{ volunteer.id }}/{{ task.id }}">Add</a></div></li>
                 {% endif %}
               {% endfor %}
             {% endfor %}

@@ -11,7 +11,7 @@ from task.views.services import VolunteerPortalServices
 
 class HomePageView(View):
 
-    def get(self, request, campaign_id, volunteer_id):
+    def get(self, request, campaign_id, volunteer_id, id):
         #check if user is authenticated.
         if request.user.is_authenticated:
             pass
@@ -20,7 +20,7 @@ class HomePageView(View):
         #get campaign name
         campaign = Campaign.objects.get(pk=campaign_id)
         #get volunteer details like volunteer id.
-        volunteer = Volunteer_Details.objects.get(campaign_id=campaign_id, volunteer=volunteer_id)
+        volunteer = Volunteer_Details.objects.get(campaign_id=campaign_id, volunteer=volunteer_id, id=id)
         #get tasks details like name, date, time, address 1, address 2, city, country, family name of customer.
         my_tasks = Task_Details.objects.filter(campaign_id=campaign_id, volunteer_id=volunteer.id)
         #get tasks which belongs to a volunteer.

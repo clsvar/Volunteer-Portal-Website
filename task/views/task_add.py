@@ -8,7 +8,7 @@ from task.models import Task_Details
 
 class HomePageView(View):
 
-    def get(self, request, campaign_id, volunteer_id, task_id):
+    def get(self, request, campaign_id, volunteer_id, id, task_id):
         if request.user.is_authenticated:
             pass
         else:
@@ -16,7 +16,7 @@ class HomePageView(View):
 
         campaign = Campaign.objects.get(pk=campaign_id)
 
-        volunteer = Volunteer_Details.objects.get(campaign_id=campaign_id, volunteer=volunteer_id)
+        volunteer = Volunteer_Details.objects.get(campaign_id=campaign_id, volunteer=volunteer_id, id=id)
 
         tasks = Task_Details.objects.get(pk=task_id)
 
@@ -28,15 +28,15 @@ class HomePageView(View):
 
         return render(request, template_name, data)
 
-    def post(self, request, campaign_id, volunteer_id, task_id):
+    def post(self, request, campaign_id, volunteer_id, id, task_id):
         if request.user.is_authenticated:
             pass
         else:
             return redirect('login')
 
-        volunteer = Volunteer_Details.objects.get(volunteer=volunteer_id)
+        volunteer = Volunteer_Details.objects.get(volunteer=volunteer_id, id=id)
         task = Task_Details.objects.get(id=task_id)
         task.volunteer_id = volunteer.id
         task.save()
 
-        return redirect("task_home", campaign_id, volunteer_id)
+        return redirect("task_home", campaign_id, volunteer_id, id)

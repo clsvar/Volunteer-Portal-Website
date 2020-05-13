@@ -14,8 +14,8 @@
             <h3>Active Volunteers</h3>
             <ul>
             {% for volunteer in volunteers %}
-              {% if volunteer.status == 'U' %}
-                <li><div>{{ volunteer.volunteer }} | {{ volunteer.email }} | {{ volunteer.status }} | <a href="/home/volunteer/edit/{{ campaign.id }}/{{ volunteer.volunteer }}">Edit</a> | <a href="/home/task/{{ campaign.id }}/{{ volunteer.volunteer }}">View Task</a></div></li>
+                {% if volunteer.status == 'U' %}
+                <li><div>{{ volunteer.volunteer }} | {{ volunteer.email }} | {{ volunteer.status }} | <a href="/home/volunteer/edit/{{ campaign.id }}/{{ volunteer.volunteer }}/{{volunteer.id}}">Edit</a> | <a href="/home/delete_volunteer/{{campaign.id}}/{{volunteer.volunteer}}/{{volunteer.id}}">Delete</a> | <a href="/home/task/{{ campaign.id }}/{{ volunteer.volunteer }}/{{volunteer.id}}">View Task</a></div></li>
               {% endif %}
             {% endfor %}
             </ul>
@@ -26,7 +26,7 @@
             <ul>
             {% for volunteer in volunteers %}
               {% if volunteer.status == 'A' %}
-                <li><div>{{ volunteer.volunteer }} | {{ volunteer.email }} | {{ volunteer.status }} | <a href="/home/volunteer/edit/{{ campaign.id }}/{{ volunteer.volunteer }}">Edit</a> | <a href="/home/task/{{ campaign.id }}/{{ volunteer.volunteer }}">View Task</a> | <a href="/home/confirmed/{{ campaign.id }}/{{ volunteer.volunteer }}">Confirmed</a></div></li>
+                <li><div>{{ volunteer.volunteer }} | {{ volunteer.email }} | {{ volunteer.status }} | <a href="/home/volunteer/edit/{{ campaign.id }}/{{ volunteer.volunteer }}/{{volunteer.id}}">Edit</a> | <a href="/home/delete_volunteer/{{campaign.id}}/{{volunteer.volunteer}}/{{volunteer.id}}">Delete</a> | <a href="/home/task/{{ campaign.id }}/{{ volunteer.volunteer }}/{{volunteer.id}}">View Task</a> | <a href="/home/confirmed/{{ campaign.id }}/{{ volunteer.volunteer }}/{{ volunteer.id }}">Confirmed</a></div></li>
               {% endif %}
             {% endfor %}
             </ul>
@@ -37,7 +37,7 @@
             <ul>
             {% for volunteer in volunteers %}
               {% if volunteer.status == 'B' %}
-                <li><div>{{ volunteer.volunteer }} | {{ volunteer.email }} | {{ volunteer.status }} | <a href="/home/volunteer/edit/{{ campaign.id }}/{{ volunteer.volunteer }}">Edit</a></div></li>
+                <li><div>{{ volunteer.volunteer }} | {{ volunteer.email }} | {{ volunteer.status }} | <a href="/home/volunteer/edit/{{ campaign.id }}/{{ volunteer.volunteer }}/{{volunteer.id}}">Edit</a> | <a href="/home/delete_volunteer/{{campaign.id}}/{{volunteer.volunteer}}/{{volunteer.id}}">Delete</a></div></li>
               {% endif %}
             {% endfor %}
             </ul>
@@ -49,7 +49,7 @@
             <ul>
             {% for volunteer in volunteers %}
               {% if volunteer.status == 'I' %}
-                <li><div>{{ volunteer.volunteer }} | {{ volunteer.email }} | {{ volunteer.status }} | <a href="/home/volunteer/edit/{{ campaign.id }}/{{ volunteer.volunteer }}">Edit</a></div></li>
+                <li><div>{{ volunteer.volunteer }} | {{ volunteer.email }} | {{ volunteer.status }} | <a href="/home/volunteer/edit/{{ campaign.id }}/{{ volunteer.volunteer }}/{{volunteer.id}}">Edit</a> | <a href="/home/delete_volunteer/{{campaign.id}}/{{volunteer.volunteer}}/{{volunteer.id}}">Delete</a></div></li>
               {% endif %}
             {% endfor %}
             </ul>

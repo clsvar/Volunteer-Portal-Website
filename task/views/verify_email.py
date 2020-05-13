@@ -11,7 +11,7 @@ from task.views.services import VolunteerPortalServices
 
 class VerifyEmailView(View):
 
-    def get(self, request, campaign_id, volunteer_id):
+    def get(self, request, campaign_id, volunteer_id, id):
         if request.user.is_authenticated:
             pass
         else:
@@ -19,7 +19,7 @@ class VerifyEmailView(View):
 
         campaign = Campaign.objects.get(pk=campaign_id)
 
-        volunteer = Volunteer_Details.objects.get(campaign_id=campaign_id, volunteer=volunteer_id)
+        volunteer = Volunteer_Details.objects.get(campaign_id=campaign_id, volunteer=volunteer_id, id=id)
         #form to check email and password that is saved in settings page.
         form = SendMailForm()
 
@@ -29,7 +29,7 @@ class VerifyEmailView(View):
 
         return render(request, template_name, data)
 
-    def post(self, request, campaign_id, volunteer_id):
+    def post(self, request, campaign_id, volunteer_id, id):
         if request.user.is_authenticated:
             pass
         else:
@@ -46,4 +46,4 @@ class VerifyEmailView(View):
             else:
                 request.session['verified'] = False
 
-        return redirect("task_home", campaign_id, volunteer_id)
+        return redirect("task_home", campaign_id, volunteer_id, id)

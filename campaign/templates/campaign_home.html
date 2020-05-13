@@ -26,7 +26,7 @@
                     function Confirmation_dialog(){
                       var r = confirm("Delete Campaign?");
                       if (r == true) {
-                        window.location.href = '/home/campaign_delete/' + {{ campaign.id }};
+                        window.location.href = '/home/campaign_delete/' + '{{ campaign.id }}';
                       } else {
                         window.location.href = '/home/campaign';
                       }

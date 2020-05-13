@@ -7,12 +7,12 @@
 {% block content %}
     <h2 class="text-primary">Welcome, {{ user.username }}</h2>
     <h3>Campaign: {{ campaign.name }}</h3>
-    <h3>Volunteer ID: {{ volunteer }}</h3>
-    <h4><a href="{% url 'task_home' campaign.id volunteer %}">Back to Task Page</a></h4>
+    <h3>Volunteer ID: {{ volunteer.volunteer }}</h3>
+    <h4><a href="{% url 'task_home' campaign.id volunteer.volunteer volunteer.id %}">Back to Task Page</a></h4>
     <div class="row">
         <div class="col-md-6">
             <h3>Task</h3>
-            <form id="task_add-form" class="form-task_add" action="{% url 'task_add' campaign.id volunteer tasks.id %}" method="post" enctype="multipart/form-data" autocomplete="off">
+            <form id="task_add-form" class="form-task_add" action="{% url 'task_add' campaign.id volunteer.volunteer volunteer.id tasks.id %}" method="post" enctype="multipart/form-data" autocomplete="off">
               {% csrf_token %}
               Task ID: <input type="text" name="user" value="{{ tasks.id }}" readonly><br/>
               Cmapaign ID: <input type="text" name="campaign" value="{{ campaign.id }}" readonly><br/>

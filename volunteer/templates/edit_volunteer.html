@@ -11,7 +11,7 @@
     <div class="row">
         <div class="col-md-6">
             <h3>Volunteer</h3>
-            <form id="edit-volunteer" class="edit-volunteer" action="{% url 'edit_volunteer' campaign.id volunteer.volunteer %}" method="post" enctype="multipart/form-data" autocomplete="off">
+            <form id="edit-volunteer" class="edit-volunteer" action="{% url 'edit_volunteer' campaign.id volunteer.volunteer volunteer.id %}" method="post" enctype="multipart/form-data" autocomplete="off">
               {% csrf_token %}
               {{ voleditdetform.as_p }}
               <button type="submit">Save Volunteer</button>

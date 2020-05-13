@@ -12,7 +12,7 @@ from volunteer.forms.volunteer_edit_form import *
 
 class HomePageView(View):
 
-    def get(self, request, campaign_id, volunteer_id):
+    def get(self, request, campaign_id, volunteer_id, id):
         if request.user.is_authenticated:
             pass
         else:
@@ -20,7 +20,7 @@ class HomePageView(View):
 
         campaign = Campaign.objects.get(pk=campaign_id)
 
-        volunteer = Volunteer_Details.objects.get(campaign=campaign_id, volunteer=volunteer_id)
+        volunteer = Volunteer_Details.objects.get(campaign=campaign_id, volunteer=volunteer_id, id=id)
 
         voleditdetform = VolunteerEditDetailsForm(instance=volunteer)
 
@@ -30,14 +30,14 @@ class HomePageView(View):
 
         return render(request, template_name, data)
 
-    def post(self, request, campaign_id, volunteer_id):
+    def post(self, request, campaign_id, volunteer_id, id):
         if request.user.is_authenticated:
             pass
         else:
             return redirect('login')
 
         # try:
-        volunteer = Volunteer_Details.objects.get(campaign=campaign_id, volunteer=volunteer_id)
+        volunteer = Volunteer_Details.objects.get(campaign=campaign_id, volunteer=volunteer_id, id=id)
         form = VolunteerEditDetailsForm(request.POST, instance=volunteer)
         if form.is_valid():
             form.save()
