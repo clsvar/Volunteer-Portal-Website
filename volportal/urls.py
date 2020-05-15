@@ -35,6 +35,7 @@ from task.views import task_delete
 from task.views import verify_email
 from settingsapp.views import settings_home
 from settingsapp.views import send_mail_setup
+from settingsapp.views import change_password
 from settingsapp.views import delete_account
 from sendmail.views import notify
 
@@ -55,6 +56,7 @@ urlpatterns = [
     path('home/task_delete/<int:campaign_id>/<str:volunteer_id>/<int:id>/<str:task_id>', task_delete.DeleteTaskView.as_view(), name="task_delete"),
     path('home/settings', settings_home.HomePageView.as_view(), name="settings_home"),
     path('home/send_mail_settings', send_mail_setup.HomePageView.as_view(), name="send_mail_setup"),
+    path('home/change_password_settings', change_password.ChangePasswordPage.as_view(), name="change_password"),    
     path('home/delete_account', delete_account.DeleteAccount.as_view(), name="delete_account"),
     path('home/verify_email/<int:campaign_id>/<str:volunteer_id>/<int:id>', verify_email.VerifyEmailView.as_view(), name="verify_email"),
     path('home/task/notify_volunteer', notify.SendMailPage.as_view(), name='notify_volunteer'),
