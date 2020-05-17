@@ -1,4 +1,7 @@
 # Volunteer-Portal-Website
+
+Website: [Volunteer Portal Website](https://volunteerportal.website "Volunteer Portal Website")
+
 A Django website that stores, manages, and tracks volunteers with any given tasks, and sends email notifications for confirmation.
 
 To install:
@@ -10,9 +13,10 @@ Next, go to the folder where you extracted the zip file. Then, install these req
 Python (3.7.4 or later)
 Django (3.0.5 or later)
 
-After installing the required modules, go to the command prompt and type: $python manage.py makemigrations.
-Then, $python manage.py migrate to create the database.
-To run the website type: $python manage.py runserver.
+- After installing the required modules, go to the command prompt and type: $python manage.py makemigrations.
+- Then, $python manage.py migrate to create the database.
+- To run the website type: $python manage.py runserver.
+
 It will tell you to open your web browser and type: '127.0.0.1:8000' in the address bar and load it. You will see the Welcome Page, signup, and log in.
 
 Well Done!
