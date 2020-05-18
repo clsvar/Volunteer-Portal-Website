@@ -12,49 +12,123 @@
     <div class="row">
         <div class="col-md-6">
             <h3>Active Volunteers</h3>
-            <ul>
+            <table class="table table-dark">
+              <tr>
+                <th>Volunteer</th>
+                <th>Email</th>
+                <th>Status</th>
+                <th>Edit</th>
+                <th>Delete</th>
+                <th>View</th>
+              </tr>
             {% for volunteer in volunteers %}
                 {% if volunteer.status == 'U' %}
-                <li><div>{{ volunteer.volunteer }} | {{ volunteer.email }} | {{ volunteer.status }} | <a href="/home/volunteer/edit/{{ campaign.id }}/{{ volunteer.volunteer }}/{{volunteer.id}}">Edit</a> | <a href="/home/delete_volunteer/{{campaign.id}}/{{volunteer.volunteer}}/{{volunteer.id}}">Delete</a> | <a href="/home/task/{{ campaign.id }}/{{ volunteer.volunteer }}/{{volunteer.id}}">View Task</a></div></li>
+                <tr>
+                <td>{{ volunteer.volunteer }}</td>
+                <td>{{ volunteer.email }}</td>
+                <td>{{ volunteer.status }}</td>
+                <td><a href="/home/volunteer/edit/{{ campaign.id }}/{{ volunteer.volunteer }}/{{volunteer.id}}">Edit</a></td>
+                <td><a href="/home/delete_volunteer/{{campaign.id}}/{{volunteer.volunteer}}/{{volunteer.id}}">Delete</a></td>
+                <td><a href="/home/task/{{ campaign.id }}/{{ volunteer.volunteer }}/{{volunteer.id}}">View Task</a></td>
+                </tr>
               {% endif %}
             {% endfor %}
-            </ul>
+            </table>
         </div>
 
         <div class="col-md-6">
             <h3>Available Volunteers</h3>
-            <ul>
+            <table class="table table-dark">
+              <tr>
+                <th>Volunteer</th>
+                <th>Email</th>
+                <th>Status</th>
+                <th>Edit</th>
+                <th>Delete</th>
+                <th>View</th>
+                <th>Confirmed</th>
+              </tr>
             {% for volunteer in volunteers %}
               {% if volunteer.status == 'A' %}
-                <li><div>{{ volunteer.volunteer }} | {{ volunteer.email }} | {{ volunteer.status }} | <a href="/home/volunteer/edit/{{ campaign.id }}/{{ volunteer.volunteer }}/{{volunteer.id}}">Edit</a> | <a href="/home/delete_volunteer/{{campaign.id}}/{{volunteer.volunteer}}/{{volunteer.id}}">Delete</a> | <a href="/home/task/{{ campaign.id }}/{{ volunteer.volunteer }}/{{volunteer.id}}">View Task</a> | <a href="/home/confirmed/{{ campaign.id }}/{{ volunteer.volunteer }}/{{ volunteer.id }}">Confirmed</a></div></li>
+              <tr>
+                <td>{{ volunteer.volunteer }} </td>
+                <td>{{ volunteer.email }}</td>
+                <td>{{ volunteer.status }}</td>
+                <td><a href="/home/volunteer/edit/{{ campaign.id }}/{{ volunteer.volunteer }}/{{volunteer.id}}">Edit</a></td>
+                <td><a href="/home/delete_volunteer/{{campaign.id}}/{{volunteer.volunteer}}/{{volunteer.id}}">Delete</a></td>
+                <td><a href="/home/task/{{ campaign.id }}/{{ volunteer.volunteer }}/{{volunteer.id}}">View Task</a></td>
+                <td><a href="/home/confirmed/{{ campaign.id }}/{{ volunteer.volunteer }}/{{ volunteer.id }}">Confirmed</a></td>
+              </tr>
               {% endif %}
             {% endfor %}
-            </ul>
+          </table>
         </div>
 
         <div class="col-md-6">
             <h3>Busy Volunteers</h3>
-            <ul>
+            <table class="table table-dark">
+              <tr>
+                <th>Volunteer</th>
+                <th>Email</th>
+                <th>Status</th>
+                <th>Edit</th>
+                <th>Delete</th>
+              </tr>
             {% for volunteer in volunteers %}
               {% if volunteer.status == 'B' %}
-                <li><div>{{ volunteer.volunteer }} | {{ volunteer.email }} | {{ volunteer.status }} | <a href="/home/volunteer/edit/{{ campaign.id }}/{{ volunteer.volunteer }}/{{volunteer.id}}">Edit</a> | <a href="/home/delete_volunteer/{{campaign.id}}/{{volunteer.volunteer}}/{{volunteer.id}}">Delete</a></div></li>
+              <tr>
+                <td>{{ volunteer.volunteer }} </td>
+                <td>{{ volunteer.email }}</td>
+                <td>{{ volunteer.status }}</td>
+                <td><a href="/home/volunteer/edit/{{ campaign.id }}/{{ volunteer.volunteer }}/{{volunteer.id}}">Edit</a></td>
+                <td><a href="/home/delete_volunteer/{{campaign.id}}/{{volunteer.volunteer}}/{{volunteer.id}}">Delete</a></td>
+              </tr>
               {% endif %}
             {% endfor %}
-            </ul>
+            </table>
         </div>
 
 
         <div class="col-md-6">
             <h3>Inactive Volunteers</h3>
-            <ul>
+            <table class="table table-dark">
+              <tr>
+                <th>Volunteer</th>
+                <th>Email</th>
+                <th>Status</th>
+                <th>Edit</th>
+                <th>Delete</th>
+              </tr>
             {% for volunteer in volunteers %}
               {% if volunteer.status == 'I' %}
-                <li><div>{{ volunteer.volunteer }} | {{ volunteer.email }} | {{ volunteer.status }} | <a href="/home/volunteer/edit/{{ campaign.id }}/{{ volunteer.volunteer }}/{{volunteer.id}}">Edit</a> | <a href="/home/delete_volunteer/{{campaign.id}}/{{volunteer.volunteer}}/{{volunteer.id}}">Delete</a></div></li>
+              <tr>
+                <td>{{ volunteer.volunteer }}</td>
+                <td>{{ volunteer.email }}</td>
+                <td>{{ volunteer.status }}</td>
+                <td><a href="/home/volunteer/edit/{{ campaign.id }}/{{ volunteer.volunteer }}/{{volunteer.id}}">Edit</a></td>
+                <td><a href="/home/delete_volunteer/{{campaign.id}}/{{volunteer.volunteer}}/{{volunteer.id}}">Delete</a></td>
+              </tr>
               {% endif %}
             {% endfor %}
-            </ul>
+            </table>
         </div>
 
     </div>
+    <style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
 
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: darkslategray;
+    }
+    </style>
 {% endblock %}
