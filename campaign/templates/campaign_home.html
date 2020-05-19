@@ -19,9 +19,19 @@
 
         <div class="col-md-8">
             <h3>Campaign List</h3>
-            <ul>
+            <table class="table table-dark">
+              <tr>
+                <th>Name</th>
+                <th>Date Created</th>
+                <th>Delete</th>
+                <th>View</th>
+              </tr>
             {% for campaign in campaign_list%}
-                  <li><div>Name: {{ campaign.name }}, Date Created: {{ campaign.date_created }} <a href="#" onclick="Confirmation_dialog()">Delete</a> | <a href="{% url 'volunteer_home' campaign.id %}">View</a></div></li>
+              <tr>
+                    <td>{{ campaign.name }}</td>
+                    <td>{{ campaign.date_created }}</td>
+                    <td><a href="#" onclick="Confirmation_dialog()">Delete</a></td>
+                    <td><a href="{% url 'volunteer_home' campaign.id %}">View</a></td>
                   <script>
                     function Confirmation_dialog(){
                       var r = confirm("Delete Campaign?");
@@ -32,10 +42,27 @@
                       }
                     }
                   </script>
+              </tr>            
             {% endfor %}
-            </ul>
+            </table>
         </div>
 
     </div>
+    <style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
 
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: darkred;
+    }
+    </style>
 {% endblock %}

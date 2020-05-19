@@ -12,8 +12,8 @@
     <meta name="description" content="A Django website that stores, manage and tracks volunteers with any given tasks, and filters volunteers according to a campaign, or with any given date, time and place.">
     <meta name="keywords" content="Track Monitor Manage Stores Coordinate Volunteers Website Portal">
     <link rel="shortcut icon" href="{% static 'icons/favicon.ico' %}">
-    <link rel="apple-touch-icon" sizes="57x57" href="{% static 'icons/touch-icon-iphone-114.png' %}">
-    <link rel="apple-touch-icon" sizes="114x114" href="{% static 'icons/touch-icon-iphone-114.png' %}">
+    <link rel="apple-touch-icon" sizes="57x57" href="{% static 'icons/touch-icon-iphone-144.png' %}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{% static 'icons/touch-icon-iphone-144.png' %}">
     <link rel="apple-touch-icon" sizes="72x72" href="{% static 'icons/touch-icon-iphone-144.png' %}">
     <link rel="apple-touch-icon" sizes="144x144" href="{% static 'icons/touch-icon-iphone-144.png' %}">
     <script src="{% static 'js/vendor/jquery-3.4.1.min.js' %}"></script>
@@ -36,7 +36,7 @@
 <nav class="navbar navbar-expand-sm" role="navigation">
     <div class="container p-3 my-3 bg-dark text-white">
         <div class="navbar-header">
-            <a class="navbar-brand" href="/">Volunteer Portal</a>
+            <p><img src="{% static 'icons/touch-icon-iphone-144.png' %}" />&nbsp;&nbsp;&nbsp;&nbsp;<a class="navbar-brand" href="/">Volunteer Portal</a></p>
         </div>
         <ul class="nav navbar-nav navbar-right">
           <li><a href="{% url 'welcome' %}">WelcomePage</a>&nbsp;&nbsp;</li>
