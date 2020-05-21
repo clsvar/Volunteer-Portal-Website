@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Home: {{ user.username }}
+{% endblock %}
+
+{% block content %}
+    <h2 class="text-primary">Welcome, {{ user.username }}</h2>
+
+    <div class="row">
+        <div class="col-md-8">
+          <h2>Help</h2>
+          <h4>Signing-up</h4>
+
+	<p>You just need to enter a username and a strong password to sign-up. There is no need for email or other personal information because we want to give privacy to our users.</p>
+
+	<p>A strong password should be:</p>
+  <ol>
+<li>Your password can't be too similar to your other personal information.</li>
+<li>Your password must contain at least 8 characters.</li>
+<li>Your password can't be commonly used.</li>
+<li>Your password can't be entirely numeric.</li>
+</ol>
+
+<h4>Creating A Campaign Name</h4>
+
+	<p>First, you must divide your volunteers into teams according to their geography. These teams will be the campaign name for you to create.
+	Just enter a name (any name), to the empty box, and press Create Campaign. The Campaign List will be populated in a table.
+	The table is easy and straight forward to understand. To add volunteers and tasks, just click, "View."
+	When you delete a campaign, all of the information stored inside it like all the volunteer data and task data will be deleted also, giving you a clean slate.</p>
+
+<h4>Adding Volunteers</h4>
+
+	<p>Adding volunteers is also straight forward. You just have to press Add Volunteer. You can be creative in using this. You may assign a code or alias, or you may put the first name of the volunteer followed by a number like, "john-0001." Then, in the email field, you must make sure you are not using the personal email of the volunteer. It is strongly recommended to tell volunteers to create a new Gmail address for this work.</p>
+
+	<p>As you can see, there is not much information to enter like first name, last name, phone number, etc. You have to keep this info locally in a spreadsheet, for the complete information of your volunteers. The reason is simple, we want more privacy.</p>
+
+<h4>Status</h4>
+
+	<p>The status dropdown box offers you 3 things: Available, Busy, and Inactive. Available volunteers are those volunteers who are ready to accept tasks. When they confirm the tasks given, you may click Confirmed in the Volunteers page, and they will be categorized as, "Active Volunteers."</p>
+
+	<p>Busy volunteers are those who are busy at the moment and cannot accept tasks because they are doing something else.</p>
+	<p>Inactive volunteers are those who participated before but not now. It's a list of volunteers for archival purposes. Once they become available, they have a record at hand.</p>
+
+<h4>Adding Tasks</h4>
+
+	<p>Just click, "View Tasks" in the volunteer table. It will bring you to the Tasks page.</p>
+
+	<p>You can add any amount of tasks to a single volunteer. And, you can reassign a task given to others to another volunteer by clicking the "Add" link.</p>
+
+	<p>Adding Tasks is also very straightforward. You just have to enter a minimum amount of information about the recipient. Task names could be, "Grocery," or "Medicine," etc.</p>
+
+	<p>Family names should be less obvious. Do not put the full name of the recipient. The recipient must be the one who knows who will come to their house, and they must know the volunteer who will arrive at what time and day. Privacy is the focus of this website.</p>
+
+<h4>Notifying Volunteers</h4>
+
+	<p>When creating a new Gmail account, you must first do the following  for this to work:</p>
+<ol>
+<li>Go to this page and unlock captcha, http://www.google.com/accounts/DisplayUnlockCaptcha.</li>
+<li>Set it to allow less secure apps access and wait for an email to arrive confirming it at your newly created Gmail account. Note: When you turn on the slider, you must go back one page for it to activate.</li>
+<li>Disable 2-Step Verification.</li>
+</ol>
+	<p>You must go to the Settings page->Set-up Send Mail to set-up your Gmail. Just enter the email address and your password, and click "Save." Again, you must create a Gmail account, specific only for this purpose.
+<b>Note:</b> You just have to do this once.</p>
+
+	<p>Then, when you go back to the Tasks page, you could see the "Verify Email" link. Click on that and enter again the Gmail account you just created. It will turn to a button that says, "Notify."</p>
+
+	<p>The email of the volunteer you entered will be used here. When you click Notify, you must wait for a popup to appear that says, "Email Sent." If not, a popup will say, "Email Error."</p>
+
+<h4>Troubleshooting</h4>
+
+<p><b>Issue:</b> Email Error!</p>
+<p><b>A solution could be one of these:</b></p>
+<ul>
+  <li>Check that you have an internet connection.</li>
+	<li>Your Gmail account is not properly configured for this. Sign-in to Gmail and be sure to:</li>
+  <ol>
+<li>Go to this page and unlock captcha, <a href="http://www.google.com/accounts/DisplayUnlockCaptcha">http://www.google.com/accounts/DisplayUnlockCaptcha</a>.</li>
+<li>Set it to allow less secure apps access and wait for an email to arrive confirming it at your newly created Gmail account. <b>Note:</b> When you turn on the slider, you must go back one page for it to activate.</li>
+<li>Disable 2-Step Verification.</li>
+</ol>
+</ul>
+<p>This is the end of our tutorial for the Volunteer Portal Website. I hope that this will help save time and money for coordinators, volunteers, front-liners who are battling this crisis that we are facing. We are in this together. <h4>Thank you!</h4></p>
+
+        </div>
+
+    </div>
+
+{% endblock %}

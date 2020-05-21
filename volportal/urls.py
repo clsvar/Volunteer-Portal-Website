@@ -20,6 +20,7 @@ from django.contrib.auth.views import LoginView, LogoutView
 
 from authentication.views import signup
 from authentication.views import welcome
+from authentication.views import help
 from campaign.views import campaign_home
 from campaign.views import campaign_delete
 from volunteer.views import volunteer_home
@@ -42,6 +43,7 @@ from sendmail.views import notify
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', welcome.HomePageView.as_view(), name="welcome"),
+    path('home/help', help.HomePageView.as_view(), name="help"),
     path('home/campaign', campaign_home.HomePageView.as_view(), name="campaign_home"),
     path('home/campaign_delete/<int:campaign_id>', campaign_delete.DeleteCampaignView.as_view(), name="campaign_delete"),
     path('home/volunteer/<int:campaign_id>', volunteer_home.HomePageView.as_view(), name="volunteer_home"),
@@ -56,7 +58,7 @@ urlpatterns = [
     path('home/task_delete/<int:campaign_id>/<str:volunteer_id>/<int:id>/<str:task_id>', task_delete.DeleteTaskView.as_view(), name="task_delete"),
     path('home/settings', settings_home.HomePageView.as_view(), name="settings_home"),
     path('home/send_mail_settings', send_mail_setup.HomePageView.as_view(), name="send_mail_setup"),
-    path('home/change_password_settings', change_password.ChangePasswordPage.as_view(), name="change_password"),    
+    path('home/change_password_settings', change_password.ChangePasswordPage.as_view(), name="change_password"),
     path('home/delete_account', delete_account.DeleteAccount.as_view(), name="delete_account"),
     path('home/verify_email/<int:campaign_id>/<str:volunteer_id>/<int:id>', verify_email.VerifyEmailView.as_view(), name="verify_email"),
     path('home/task/notify_volunteer', notify.SendMailPage.as_view(), name='notify_volunteer'),

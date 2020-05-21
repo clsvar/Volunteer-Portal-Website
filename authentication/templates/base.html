@@ -43,10 +43,12 @@
           {% if user.is_authenticated %}
               <li><a href="{% url 'campaign_home' %}">CampaignPage</a>&nbsp;&nbsp;</li>
               <li><a href="{% url 'settings_home' %}">Settings</a>&nbsp;&nbsp;</li>
+              <li><a href="{% url 'help' %}">Help</a>&nbsp;&nbsp;</li>                            
               <li><a href="{% url 'logout' %}">Logout</a>&nbsp;&nbsp;</li>
           {% else %}
               <li><a href="{% url 'signup' %}">Signup</a>&nbsp;&nbsp;</li>
               <li><a href="{% url 'login' %}">Login</a>&nbsp;&nbsp;</li>
+              <li><a href="{% url 'help' %}">Help</a>&nbsp;&nbsp;</li>
           {% endif %}
         </ul>
     </div>
