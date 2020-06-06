@@ -12,7 +12,11 @@ class HomePageView(View):
 
     def get(self, request, campaign_id):
         if request.user.is_authenticated:
-            pass
+            campaign = Campaign.objects.get(pk=campaign_id)
+            if request.user.id == campaign.user_id:
+                pass
+            else:
+                return redirect('login')
         else:
             return redirect('login')
 
@@ -28,7 +32,11 @@ class HomePageView(View):
 
     def post(self, request, campaign_id):
         if request.user.is_authenticated:
-            pass
+            campaign = Campaign.objects.get(pk=campaign_id)
+            if request.user.id == campaign.user_id:
+                pass
+            else:
+                return redirect('login')
         else:
             return redirect('login')
 
