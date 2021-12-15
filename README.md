@@ -1,7 +1,5 @@
 # Volunteer-Portal-Website
 
-Website: [Volunteer Portal Website](https://volunteerportal.website "Volunteer Portal Website")
-
 A Django website that stores, manages, and tracks volunteers with any given tasks, and sends email notifications for confirmation.
 
 To install:
