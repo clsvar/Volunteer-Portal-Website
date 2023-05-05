@@ -38,7 +38,7 @@ Check email for replies and click the confirmed tasks to volunteers.  So, it wil
 - After the task gets completed, you can safely delete it.
 
 ## Privacy
-We made sure that even in a breach, no personal details are kept. Please tell the volunteers to create a unique email account in Gmail specific only for this purpose. Do not let them use their personal email accounts. Do not put the full names of recipients to avoid linking them to their physical addresses. If you want to have the full details of volunteers,  create a spreadsheet locally on your computer with their personal info. We do not want you to store it in the portal to maintain privacy. Of course, we do not sell, view, or use the data stored in the database. Data stored is yours only.
+We made sure that even in a breach, no personal details are kept. Please tell the volunteers to create a unique email account using Namecheap private email specific only for this purpose. Do not let them use their personal email accounts. Do not put the full names of recipients to avoid linking them to their physical addresses. If you want to have the full details of volunteers,  create a spreadsheet locally on your computer with their personal info. We do not want you to store it in the portal to maintain privacy. Of course, we do not sell, view, or use the data stored in the database. Data stored is yours only.
 
 ## Feedback
 We would really appreciate sending your comments, ideas, and feedback through our email:  [clsvar.github@gmail.com](mailto:clsvar.github@gmail.com)
