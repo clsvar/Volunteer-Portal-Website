@@ -9,7 +9,7 @@ First, download this project and extract to your local computer.
 Next, go to the folder where you extracted the zip file. Then, install these requirements:
 
 Python (3.7.4 or later)
-Django (3.0.5 or later)
+Django (4.0.6 or later)
 
 - After installing the required modules, go to the command prompt and type: $python manage.py makemigrations.
 - Then, $python manage.py migrate to create the database.
