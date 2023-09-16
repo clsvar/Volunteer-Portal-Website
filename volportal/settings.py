@@ -129,6 +129,9 @@ LOGIN_REDIRECT_URL="campaign_home"
 LOGOUT_REDIRECT_URL="welcome"
 LOGIN_URL="login"
 
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST = 'smtp.office365.com'
+EMAIL_HOST_USER = 'my@mail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+
+DEFAULT_AUTO_FIELD='django.db.models.AutoField'
